@@ -13,7 +13,12 @@ const puppeteer = require("puppeteer");
 const app  = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://mulesoft-job-scanner.onrender.com" 
+  ]
+}));
 app.use(express.json());
 
 // ── In-memory state ──────────────────────────────────────────────────────────
